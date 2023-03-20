@@ -340,3 +340,30 @@
     });
 
 })(window.jQuery);
+
+
+// Get all the images with the class "lazy"
+const lazyImages = document.querySelectorAll('.lazy');
+
+// Set up the IntersectionObserver
+const observer = new IntersectionObserver(entries => {
+  // Loop through each entry
+  entries.forEach(entry => {
+    // Check if the entry is intersecting
+    if (entry.isIntersecting) {
+      // Get the image element
+      const img = entry.target;
+      // Set the src attribute to the data-src attribute
+      img.setAttribute('src', img.getAttribute('data-src'));
+      // Remove the "lazy" class
+      img.classList.remove('lazy');
+      // Unobserve the entry
+      observer.unobserve(img);
+    }
+  });
+});
+
+// Observe each lazy image
+lazyImages.forEach(img => {
+  observer.observe(img);
+});
