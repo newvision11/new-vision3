@@ -861,7 +861,7 @@ button {
     margin-left: 0px;
 }
 .site-branding .brand-logo{
-    max-width: 100px;
+    max-width: 170px;
 }
 .header-navigation .primary-menu{
     display: -webkit-box;
@@ -1674,7 +1674,8 @@ button {
 }
 .about-area-v1 .img-holder img{
     border-radius: 250px;
-    height: 700px;
+    height: 550px;
+    
     width: 500px;
 }
 .about-area-v1 .text-wrapper h4{
